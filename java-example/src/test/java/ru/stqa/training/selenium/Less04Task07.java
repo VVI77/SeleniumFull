@@ -61,8 +61,8 @@ public class Less04Task07 {
         }
     }
 
-    private WebElement refreshPage(WebDriver d, int i){
-        WebElement row = driver.findElement(By.id("box-apps-menu"));
+    private WebElement refreshPage(WebDriver wd, int i){
+        WebElement row = wd.findElement(By.id("box-apps-menu"));
         WebElement link = row.findElement(By.xpath("./li[@id='app-'][" + i + "]"));
         return link;
     }
