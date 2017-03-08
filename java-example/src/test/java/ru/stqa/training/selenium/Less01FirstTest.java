@@ -22,7 +22,7 @@ import java.io.File;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class MyFirstTest {
+public class Less01FirstTest {
 
     private WebDriver driver;
     private WebDriverWait wait;

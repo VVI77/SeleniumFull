@@ -32,7 +32,7 @@ public class Less05Task10 {
         String [] listMainPage;
         String [] listItemPage;
         String result;
-        
+
         WebElement item = driver.findElement(By.xpath(".//div[@id='box-campaigns']//li[1]"));
         listMainPage = fillList(item);
         listMainPage[0] = item.findElement(By.cssSelector("div.name")).getText();
