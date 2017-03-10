@@ -121,23 +121,6 @@ public class Less05Task10 {
 
 
 
-/*        System.out.println(regularPrice);
-        System.out.println(regularPriceColor);
-        System.out.println(regularPriceFontSize);
-        System.out.println(regularPriceDecor + "\n");
-
-        System.out.println(campaignPrice);
-        System.out.println(campaignPriceColor);
-        System.out.println(campaignPriceFontSize);
-        System.out.println(campaignPriceFontWeight + "\n");
-
-        if (campaignPriceFontSize.compareTo(regularPriceFontSize) > 0)
-            res = "bigger";
-        else
-            res = "smaller";
-        System.out.println("CampaignPrice Font " + res + " then RegularPrice Font ");*/
-
-
     @After
     public void stop() {
         driver.quit();

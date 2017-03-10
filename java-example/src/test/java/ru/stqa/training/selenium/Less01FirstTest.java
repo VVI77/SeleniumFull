@@ -19,6 +19,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
@@ -29,21 +31,26 @@ public class Less01FirstTest {
 
     @Before
     public void start() {
-        //driver = new ChromeDriver();
-        FirefoxBinary bin = new FirefoxBinary(new File("c:\\Program Files\\Mozilla Firefox 45\\firefox.exe"));
+        driver = new ChromeDriver();
+        /*FirefoxBinary bin = new FirefoxBinary(new File("c:\\Program Files\\Mozilla Firefox 45\\firefox.exe"));
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(FirefoxDriver.MARIONETTE, false);
         driver = new FirefoxDriver(bin, new FirefoxProfile(), caps);
-        System.out.println(((HasCapabilities)driver).getCapabilities());
+        System.out.println(((HasCapabilities)driver).getCapabilities());*/
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
     public void myFirstTest() {
-        driver.get("http://www.google.com");
+        /*driver.get("http://www.google.com");
         driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnG")).click();
-        wait.until(titleIs("webdriver - Поиск в Google"));
+        wait.until(titleIs("webdriver - Поиск в Google"));*/
+        Path testPath = Paths.get("./src/test/resources/pelican.jpg");
+        System.out.println("It's absolute path is: "
+                + testPath.toAbsolutePath());
+        System.out.println("It's normalized path is: "
+                + testPath.normalize().toAbsolutePath());
     }
 
     @After
