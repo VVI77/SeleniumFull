@@ -6,10 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 /**
  * Created by Vladimir on 15.03.2017.
@@ -21,7 +26,12 @@ public class TestBase {
 
     @Before
     public void start() {
-        driver = new ChromeDriver();
+        LoggingPreferences logPrefs = new LoggingPreferences();
+        logPrefs.enable(LogType.BROWSER, Level.ALL);
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+        //driver = new ChromeDriver();
+        driver = new ChromeDriver(cap);
         implicitlyWaitOn();
         wait = new WebDriverWait(driver, 10/*seconds*/);
     }
